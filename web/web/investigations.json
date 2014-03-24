@@ -1,0 +1,115 @@
+{
+  "count" : 1,
+  "href" : "/app/rest/investigations?locator=state:TAKEN",
+  "investigation" : [ {
+    "id" : "buildType:(id:TC_Trunk_VsPlugin_VsPluginTests)",
+    "state" : "TAKEN",
+    "href" : "/app/rest/investigations/buildType:(id:TC_Trunk_VsPlugin_VsPluginTests)",
+    "assignee" : {
+      "username" : "user1",
+      "id" : 458,
+      "href" : "/app/rest/users/id:458"
+    },
+    "assignment" : {
+      "user" : {
+        "username" : "user1",
+        "id" : 458,
+        "href" : "/app/rest/users/id:458"
+      },
+      "timestamp" : "20140307T140355+0400"
+    },
+    "scope" : {
+      "buildTypes" : {
+        "count" : 1,
+        "buildType" : [ {
+          "id" : "TC_Trunk_VsPlugin_VsPluginTests",
+          "name" : "vs-plugin Tests",
+          "projectName" : "TeamCity :: TeamCity Trunk :: VS Plugin",
+          "projectId" : "TC_Trunk_VsPlugin",
+          "href" : "/app/rest/buildTypes/id:TC_Trunk_VsPlugin_VsPluginTests",
+          "webUrl" : "http://buildserver.labs.intellij.net/viewType.html?buildTypeId=TC_Trunk_VsPlugin_VsPluginTests"
+        } ]
+      }
+    },
+    "target" : {
+      "anyProblem" : true
+    },
+    "resolution" : {
+      "type" : "whenFixed"
+    }
+  },
+    {
+      "id" : "buildType:(id:TC_Trunk_VsPlugin_VsPluginTests)",
+      "state" : "TAKEN",
+      "href" : "/app/rest/investigations/buildType:(id:TC_Trunk_VsPlugin_VsPluginTests)",
+      "assignee" : {
+        "username" : "user1",
+        "id" : 458,
+        "href" : "/app/rest/users/id:458"
+      },
+      "assignment" : {
+        "user" : {
+          "username" : "user1",
+          "id" : 458,
+          "href" : "/app/rest/users/id:458"
+        },
+        "timestamp" : "20140307T140355+0400"
+      },
+      "scope" : {
+        "buildTypes" : {
+          "count" : 1,
+          "buildType" : [ {
+            "id" : "TC_Trunk_VsPlugin_VsPluginTests",
+            "name" : "vs-plugin Tests",
+            "projectName" : "TeamCity :: TeamCity Trunk :: VS Plugin",
+            "projectId" : "TC_Trunk_VsPlugin",
+            "href" : "/app/rest/buildTypes/id:TC_Trunk_VsPlugin_VsPluginTests",
+            "webUrl" : "http://buildserver.labs.intellij.net/viewType.html?buildTypeId=TC_Trunk_VsPlugin_VsPluginTests"
+          } ]
+        }
+      },
+      "target" : {
+        "anyProblem" : true
+      },
+      "resolution" : {
+        "type" : "whenFixed"
+      }
+    },
+    {
+      "id" : "buildType:(id:TC_Trunk_VsPlugin_VsPluginTests)",
+      "state" : "TAKEN",
+      "href" : "/app/rest/investigations/buildType:(id:TC_Trunk_VsPlugin_VsPluginTests)",
+      "assignee" : {
+        "username" : "user1",
+        "id" : 458,
+        "href" : "/app/rest/users/id:458"
+      },
+      "assignment" : {
+        "user" : {
+          "username" : "user1",
+          "id" : 458,
+          "href" : "/app/rest/users/id:458"
+        },
+        "timestamp" : "20140307T140355+0400"
+      },
+      "scope" : {
+        "buildTypes" : {
+          "count" : 1,
+          "buildType" : [ {
+            "id" : "TC_Trunk_VsPlugin_VsPluginTests",
+            "name" : "vs-plugin Tests",
+            "projectName" : "TeamCity :: TeamCity Trunk :: VS Plugin",
+            "projectId" : "TC_Trunk_VsPlugin",
+            "href" : "/app/rest/buildTypes/id:TC_Trunk_VsPlugin_VsPluginTests",
+            "webUrl" : "http://buildserver.labs.intellij.net/viewType.html?buildTypeId=TC_Trunk_VsPlugin_VsPluginTests"
+          } ]
+        }
+      },
+      "target" : {
+        "anyProblem" : true
+      },
+      "resolution" : {
+        "type" : "whenFixed"
+      }
+    }]
+}

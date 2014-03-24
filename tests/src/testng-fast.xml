@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Widgets tests">
+  <test name="Widgets tests">
+    <classes>
+
+    </classes>
+  </test>
+</suite>
+
