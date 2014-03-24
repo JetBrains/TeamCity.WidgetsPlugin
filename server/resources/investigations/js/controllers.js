@@ -19,11 +19,11 @@
 angular.module('investigationsApp.controllers', ['investigationsApp.services'])
     .controller('LoaderCtrl', ['$scope', '$log', '$http', '$timeout', '$localStorage', 'Loader', 'config',
         function ($scope, $log, $http, $timeout, $localStorage, Loader, config) {
-            var schedule = function () {
+            var schedule = function (delay) {
                 $timeout(function () {
                     loadInvestigations();
-                }, config.reload);
-                $log.debug("Next update was scheduled");
+                }, delay);
+                $log.debug("Next update will be performed in " + delay + "ms.");
             };
             var loadInvestigations = function () {
                 $log.debug('controller.loadInvestigations starts...');
@@ -39,7 +39,7 @@ angular.module('investigationsApp.controllers', ['investigationsApp.services'])
                         $log.error('Failed: ' + reason);
                     }
                 );
-                schedule();
+                schedule(config.reload);
             };
 
             var clearCache = function () {
@@ -53,7 +53,7 @@ angular.module('investigationsApp.controllers', ['investigationsApp.services'])
                 loadInvestigations($http, $timeout);
             } else {
                 $scope.data = storedData;
-                schedule();
+                schedule(1000);
             }
         }])
 ;
