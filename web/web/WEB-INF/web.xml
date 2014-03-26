@@ -7,7 +7,7 @@
 
   <servlet>
     <servlet-name>teamcity</servlet-name>
-    <servlet-class>org.jetbrains.teamcity.widgets.JsonResponseWrapper</servlet-class>
+    <servlet-class>org.jetbrains.teamcity.widgets.JsonResponseHelper</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>teamcity</servlet-name>

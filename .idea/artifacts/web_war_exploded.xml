@@ -8,7 +8,7 @@
           <element id="module-output" name="web" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="org.glassfish.jersey.core:jersey-client:2.6" />
+          <element id="library" level="project" name="web-lib" />
         </element>
       </element>
       <element id="dir-copy" path="$PROJECT_DIR$/server/resources" />
