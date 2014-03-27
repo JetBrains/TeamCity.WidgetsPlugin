@@ -22,7 +22,7 @@ angular.module('investigationsApp.config', [])
             'Accept': 'application/json'
           }
         })
-        .constant('config', {url: '/app/rest/investigations?locator=state:TAKEN', reload: 1000 * 5 * 60});
+        .constant('config', {url: '/guestAuth/app/rest/investigations?locator=state:TAKEN', reload: 1000 * 5 * 60});
         //.constant('config',{url:'/teamcity', reload: 1000 * 5 * 60});
         //.constant('config',{url:'/investigations.json', reload: 1000 * 5 * 60});
 
