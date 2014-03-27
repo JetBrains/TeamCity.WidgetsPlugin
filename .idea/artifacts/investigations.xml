@@ -4,7 +4,7 @@
     <root id="root">
       <element id="archive" name="investigations.zip">
         <element id="directory" name="investigations">
-          <element id="file-copy" path="$PROJECT_DIR$/server/resources/investigations/tv.html" />
+          <element id="file-copy" path="$PROJECT_DIR$/server/resources/investigations/top_fullScreen.html" />
           <element id="directory" name="js">
             <element id="dir-copy" path="$PROJECT_DIR$/server/resources/investigations/js" />
           </element>
