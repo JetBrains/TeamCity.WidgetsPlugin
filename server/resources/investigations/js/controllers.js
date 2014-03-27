@@ -17,45 +17,51 @@
 'use strict';
 
 angular.module('investigationsApp.controllers', ['investigationsApp.services'])
-    .controller('LoaderCtrl', ['$scope', '$log', '$http', '$timeout', '$localStorage', 'Loader', 'config',
-        function ($scope, $log, $http, $timeout, $localStorage, Loader, config) {
+        .controller('LoaderCtrl', ['$scope', '$log', '$http', '$timeout', '$localStorage', 'Loader', 'config',
+          function ($scope, $log, $http, $timeout, $localStorage, Loader, config) {
             var schedule = function (delay) {
-                $timeout(function () {
-                    loadInvestigations();
-                }, delay);
-                $log.debug("Next update will be performed in " + delay + "ms.");
+              $timeout(function () {
+                loadInvestigations();
+              }, delay);
+              $log.debug("Next update will be performed in " + delay + "ms.");
             };
             var loadInvestigations = function () {
-                $log.debug('controller.loadInvestigations starts...');
-                var promise = Loader.externalLoad();
-                promise.then(
-                    function (data) {
+              $log.debug('controller.loadInvestigations starts...');
+              var promise = Loader.externalLoad();
+              promise.then(
+                      function (data) {
                         clearCache();
-                        $localStorage.investigations = data;
-                        $log.debug("--Saved to local storage -" + $localStorage.investigations);
                         $scope.data = data;
-                    },
-                    function (reason) {
+                        $scope.updateDetails = Date.now();
+                        saveToLocalStorage(data, $scope.updateDetails);
+                      },
+                      function (reason) {
                         $log.error('Failed: ' + reason);
-                    }
-                );
-                schedule(config.reload);
+                      }
+              );
+              schedule(config.reload);
+            };
+
+            var saveToLocalStorage = function (data, ts) {
+              $localStorage.invWidgetData = {investigations: data, updated: ts};
+              $log.debug("--Saved to local storage -" + $localStorage.invWidgetData);
             };
 
             var clearCache = function () {
-                $log.debug("--Clean local storage -");
-                delete $localStorage.investigations;
+              $log.debug("--Clean local storage -");
+              delete $localStorage.invWidgetData;
             };
 
-            var storedData = $localStorage.investigations;
+            var storedData = $localStorage.invWidgetData;
             $log.debug("--Restored from local storage -" + storedData);
             if (storedData === undefined) {
-                loadInvestigations($http, $timeout);
+              loadInvestigations($http, $timeout);
             } else {
-                $scope.data = storedData;
-                schedule(1000);
+              $scope.data = storedData.investigations;
+              $scope.updateDetails = storedData.updated;
+              schedule(1000);
             }
-        }])
+          }])
 ;
 
 

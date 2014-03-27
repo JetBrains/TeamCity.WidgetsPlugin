@@ -24,10 +24,15 @@ angular.module('investigationsApp.services', ['investigationsApp.config'])
               var deferred = $q.defer();
               $http.get(config.url).
                       success(function (data, status, headers, config) {
-                        $log.debug('Loaded investigations: ' + data.count);
-                        var groups = groupedByUser(data.investigation);
-                        $log.debug("Created groups: " + groups.length);
-                        deferred.resolve(groups);
+                        if (data === undefined || data.count === undefined || data.investigation === undefined) {
+                          $log.info("No investigations found.");
+                          deferred.resolve([]);
+                        } else {
+                          $log.debug('Loaded investigations: ' + data.count);
+                          var groups = groupedByUser(data.investigation);
+                          $log.debug("Created groups: " + groups.length);
+                          deferred.resolve(groups);
+                        }
                       }).error(function (data, status, headers, config) {
                         $log.error("An error occurred during loading investigations from url: " + config.url + ". Status: " + status);
                         deferred.reject(data);
@@ -35,7 +40,6 @@ angular.module('investigationsApp.services', ['investigationsApp.config'])
               return deferred.promise;
             }
           };
-
 
           var freshInvestigations = function (data) {
             var filtered = [];
@@ -51,6 +55,9 @@ angular.module('investigationsApp.services', ['investigationsApp.config'])
             // each entry {key: userId, user: user, value:  items: array of investigations}
             var indexes = [];
             var groups = [];
+            if (data === undefined || data.length === undefined) {
+              return [];
+            }
             $log.debug('Start grouping. Data length: ' + data.length);
             angular.forEach(data, function (investigation) {
               var archivedProject = (investigation.scope.project !== undefined && investigation.scope.project.archived === true);

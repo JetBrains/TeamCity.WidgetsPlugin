@@ -24,19 +24,17 @@ angular.module('investigationsApp.directives', ['angularMoment', 'investigations
             link: function (scope, iElement, iAttrs) {
               var gr;
               scope.$watch("data", function (newVal) {
-                $log.info('watched event occurred');
                 if (newVal) {
                   if (gr == undefined) {
                     gr = new Graph();
                   }
                   gr.addCanvas(gr != undefined);
-                  gr.prepareData(scope.data);
+                  gr.prepareData(scope.data, scope.updateDetails);
                   gr.addAxisAndGrid();
                   gr.draw();
                   gr.addLegend();
                   gr.addBottomPanel();
                 }
-
               });
 
             }

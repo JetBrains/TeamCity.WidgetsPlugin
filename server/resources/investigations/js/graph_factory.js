@@ -97,14 +97,22 @@ angular.module('investigationsApp.graphs', [])
           };
 
           Graph.prototype.addBottomPanel = function () {
+            var description;
+            if (this.details.assigneesShown == 0) {
+              description = "No investigations found."
+            } else {
+              var updateDate = "Last updated at " + moment(this.details.updateDetails).format('MMMM Do YYYY, h:mm:ss');
+              description = "Showing top " + this.details.assigneesShown + " assignees (out of " + this.details.assigneesTotal +
+                      ") handling " + Math.round((this.details.investigationShown / this.details.investigationsTotal * 100))
+                      + "% of all investigations. " + updateDate;
+            }
+
             this.canvas.append("text")
                     .attr("x", 10)
                     .attr("y", this.height - 10)
                     .attr("text-anchor", "start")
                     .attr("class", "description")
-                    .text("Showing top " + this.details.assigneesShown + " assignee (out of " + this.details.assigneesTotal +
-                            ") handling " + Math.round((this.details.investigationShown / this.details.investigationsTotal * 100))
-                            + "% of all investigations");
+                    .text(description);
           };
 
           Graph.prototype.addLegend = function () {
@@ -172,7 +180,7 @@ angular.module('investigationsApp.graphs', [])
                     .domain([0, Math.max(d3.max(this.data.map(function (d) {
                       return d.items.length
                     })), 2 * this.xTicks)])
-                    .range([this.leftBarWidth, this.width-20]);
+                    .range([this.leftBarWidth, this.width - 20]);
 
 
             this.yScale = d3.scale.ordinal()
@@ -247,8 +255,10 @@ angular.module('investigationsApp.graphs', [])
             });
           };
 
-          Graph.prototype.prepareData = function (data) {
+          Graph.prototype.prepareData = function (data, updateDetails) {
             var self = this;
+
+            this.details.updateDetails = updateDetails;
 
             this.details.assigneesTotal = data.length;
 

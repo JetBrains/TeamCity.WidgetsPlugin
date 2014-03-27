@@ -17,7 +17,12 @@
 'use strict';
 
 angular.module('investigationsApp.config', [])
-    .constant('config',{url:'/app/rest/investigations?locator=state:TAKEN', reload: 1000 * 5 * 60});
-    //.constant('config',{url:'/teamcity', reload: 1000 * 5 * 60});
-    //.constant('config',{url:'/investigations.json', reload: 1000 * 5 * 60});
+        .constant('httpConfig', {
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .constant('config', {url: '/app/rest/investigations?locator=state:TAKEN', reload: 1000 * 5 * 60});
+        //.constant('config',{url:'/teamcity', reload: 1000 * 5 * 60});
+        //.constant('config',{url:'/investigations.json', reload: 1000 * 5 * 60});
 
