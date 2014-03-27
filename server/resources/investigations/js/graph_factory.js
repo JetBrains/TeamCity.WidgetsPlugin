@@ -41,7 +41,6 @@ angular.module('investigationsApp.graphs', [])
             this.maxSlice = this.height / 40;
             this.slices = Math.round(this.maxSlice) - 5;
             this.lineHeight = (this.height - this.top) / this.maxSlice;
-            this.xTicks = 10;
           };
 
 
@@ -101,7 +100,8 @@ angular.module('investigationsApp.graphs', [])
             if (this.details.assigneesShown == 0) {
               description = "No investigations found."
             } else {
-              var updateDate = "Last updated at " + moment(this.details.updateDetails).format('MMMM Do YYYY, h:mm:ss');
+              var updateDate = "Last updated " + moment(this.details.updateDetails).format('MMMM Do') + " @ "
+                      + moment(this.details.updateDetails).format('HH:mm');
               description = "Showing top " + this.details.assigneesShown + " assignees (out of " + this.details.assigneesTotal +
                       ") handling " + Math.round((this.details.investigationShown / this.details.investigationsTotal * 100))
                       + "% of all investigations. " + updateDate;
@@ -176,10 +176,14 @@ angular.module('investigationsApp.graphs', [])
 
           Graph.prototype.addAxisAndGrid = function () {
             var self = this;
+            var xMax = Math.ceil(Math.max(d3.max(this.data.map(function (d) {
+              return d.items.length
+            })), 20) / 10) * 10;
+
+            this.xTicks = Math.ceil(Math.min(xMax / 10,10));
+
             this.xScale = d3.scale.linear()
-                    .domain([0, Math.max(d3.max(this.data.map(function (d) {
-                      return d.items.length
-                    })), 2 * this.xTicks)])
+                    .domain([0, xMax])
                     .range([this.leftBarWidth, this.width - 20]);
 
 
