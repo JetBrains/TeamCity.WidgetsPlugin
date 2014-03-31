@@ -36,18 +36,21 @@ angular.module('changesApp.controllers', ['changesApp.services'])
               }
               pagePromise.then(
                       function (data) {
-                        $log.debug("Received data: " + data.count);
-                        var changes = data.change.reverse();
                         if ($scope.data === undefined) {
                           $scope.data = [];
                         }
+                        if (data === undefined || data.change === undefined) {
+                          $log.log("No commits found");
+                          return;
+                        }
+                        var changes = data.change.reverse();
                         changes.forEach(function (change) {
                           var changePromise = ChangesLoader.loadSingleChange(change.id);
                           changePromise.then(
                                   function (loadedChange) {
                                     $log.debug(loadedChange);
                                     var skip = false;
-                                    var name = (loadedChange.user !== undefined && loadedChange.user.name!==undefined)
+                                    var name = (loadedChange.user !== undefined && loadedChange.user.name !== undefined)
                                             ? loadedChange.user.name
                                             : loadedChange.username;
                                     loadedChange.fullName = improveName(name);
@@ -79,8 +82,8 @@ angular.module('changesApp.controllers', ['changesApp.services'])
               name = name.replace(".", " ").replace(/\b./g, function (m) {
                 return m.toUpperCase();
               });
-              if (name.indexOf("<")>-1){
-                name = name.substring(0,name.indexOf("<")-1);
+              if (name.indexOf("<") > -1) {
+                name = name.substring(0, name.indexOf("<") - 1);
               }
               if (name.length > 25) {
                 name = name.substring(0, 25);
