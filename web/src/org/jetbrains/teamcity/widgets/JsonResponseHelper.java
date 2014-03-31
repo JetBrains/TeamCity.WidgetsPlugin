@@ -37,9 +37,9 @@ public class JsonResponseHelper implements Servlet {
   public void service(ServletRequest servletRequest, ServletResponse servletResponse) throws ServletException, IOException {
 
     DefaultHttpClient client = new DefaultHttpClient();
-
-    HttpGet httpget = new HttpGet("http://buildserver/app/rest/investigations");
-    httpget.setHeader("Authorization", "Basic <encoded credentials>");
+    String url = servletRequest.getParameter("url");
+    //HttpGet httpget = new HttpGet("http://buildserver/guestAuth/app/rest/investigations?locator=state:TAKEN");
+    HttpGet httpget = new HttpGet("http://buildserver/" + url);
     httpget.setHeader("Accept", "application/json");
 
     HttpResponse response = client.execute(httpget);

@@ -1,6 +1,6 @@
 {
   "___comment___": "Run `bower install` from this directory to update components",
-  "name": "TeamCity.Widgets.Investigations",
+  "name": "TeamCity.Widgets.Commits",
   "private": true,
   "ignore": [
     "**/.*",
@@ -11,6 +11,7 @@
   ],
   "dependencies": {
     "angular": "~1.2.10",
+    "angular-animate": "~1.2.10",
     "d3": "~3.4.1",
     "angular-moment": "~0.6.2",
     "moment": "~2.5.1",
