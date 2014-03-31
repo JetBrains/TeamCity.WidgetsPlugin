@@ -22,10 +22,6 @@ angular.module('changesApp.directives', ['angularMoment', 'changesApp.changesVie
             restrict: 'A',
             scope: {
               value: "="
-            },
-            link: function (scope, iElement, iAttrs) {
-              iElement.height = window.innerHeight-50;
-              iElement.width  = window.innerWidth;
             }
           }
         }]);

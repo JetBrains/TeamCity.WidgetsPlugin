@@ -51,12 +51,6 @@ angular.module('changesApp.controllers', ['changesApp.services'])
                           return;
                         }
                         var changes = data.change.reverse();
-                        $scope.patterns = [
-                          {from: /merged/gi, to: "split"},
-                          {from: /merge/gi, to: "split"},
-                          {from: /fixed/gi, to: "broken"},
-                          {from: /fix/gi, to: "break"}
-                        ];
                         changes.forEach(function (change) {
                           var changePromise = ChangesLoader.loadSingleChange(change.id);
                           changePromise.then(
@@ -78,7 +72,10 @@ angular.module('changesApp.controllers', ['changesApp.services'])
                                       if ($scope.data.length > config.maxCount) {
                                         $scope.data.pop();
                                       }
-                                      saveToLocalStorage($scope.data, loadedChange.id, Date.now());
+                                      var ts = Date.now();
+                                      saveToLocalStorage($scope.data, loadedChange.id, ts);
+                                      $scope.updateDetails = ts;
+                                      createUpdateDescription();
                                     }
                                   }
                           );
@@ -89,6 +86,11 @@ angular.module('changesApp.controllers', ['changesApp.services'])
                       }
               );
               schedule(config.reload);
+            };
+
+            var createUpdateDescription = function(){
+              $scope.updateDescription = "Last updated " + moment($scope.updateDetails).format('MMMM Do') + " @ "
+                      + moment($scope.updateDetails).format('HH:mm');
             };
 
             var improveName = function (name) {
@@ -123,6 +125,7 @@ angular.module('changesApp.controllers', ['changesApp.services'])
               $scope.data = storedData.shownChanges;
               $scope.sinceId = storedData.sinceId;
               $scope.updateDetails = storedData.updated;
+              createUpdateDescription();
               schedule(1000);
             }
           }])
