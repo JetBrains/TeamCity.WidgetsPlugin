@@ -30,14 +30,20 @@ angular.module('replacerFilters', []).filter('replacer', function (ChangesLoader
     patternsReload();
   }
 
+  var preg_quote = function (str) {
+    return (str + '').replace(/([\\\.\+\*\?\[\^\]\$\(\)\{\}\=\!\<\>\|\:])/g, "\\$1");
+  };
+
   return function (input) {
     var result = input;
     patterns.forEach(function (r) {
-      result = result.replace(r.from, r.to);
+      result = result.replace(new RegExp("(" + preg_quote(r.from) + ")", 'gi'), r.to);
     });
     return result;
   };
 });
+
+
 
 
 

@@ -1,8 +1,7 @@
 [
-  {"from": "merged", "to": "split"},
-  {"from": "merge", "to": "split"},
-  {"from": "fixed bug in", "to": "broken"},
-  {"from": "fix bug in", "to": "break"},
-  {"from": "fixed", "to": "broken"},
-  {"from": "fix", "to": "break"}
+  {"from": "merged ", "to": "split "},
+  {"from": "merge ", "to": "split "},
+  {"from": "fixed bug in", "to": "broke "},
+  {"from": "fix ", "to": "break "},
+  {"from": "fixed ", "to": "broke "}
 ]
