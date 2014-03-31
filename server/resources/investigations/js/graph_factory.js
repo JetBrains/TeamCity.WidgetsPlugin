@@ -32,7 +32,7 @@ angular.module('investigationsApp.graphs', [])
             }
             this.details = {assigneesTotal: 0, investigationsTotal: 0, assigneesShown: 0, investigationShown: 0};
             this.canvas = d3.select("body")
-                    .append('svg');
+                    .append('svg').attr("class", "canvas");
             this.height = this.canvas.height = window.innerHeight - 10;
             this.width = this.canvas.width = window.innerWidth - 10;
             this.leftBarWidth = this.width / 5 + 100;
@@ -180,7 +180,7 @@ angular.module('investigationsApp.graphs', [])
               return d.items.length
             })), 20) / 10) * 10;
 
-            this.xTicks = Math.ceil(Math.min(xMax / 10,10));
+            this.xTicks = Math.ceil(Math.min(xMax / 10, 10));
 
             this.xScale = d3.scale.linear()
                     .domain([0, xMax])
