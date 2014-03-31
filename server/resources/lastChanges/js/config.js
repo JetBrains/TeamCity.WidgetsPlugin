@@ -22,18 +22,12 @@ angular.module('changesApp.config', [])
             'Accept': 'application/json'
           }
         })
-        //.constant('config', {url: '/guestAuth/app/rest/changes', reload: 1000 * 5 * 60});
-        /*.constant('config',{baseUrl: '/teamcity?url=',
-                            pageUrl:'/guestAuth/app/rest/changes?locator=count:12,start:0',
-                            sinceUrl:'/guestAuth/app/rest/changes?sinceChange=id:',
-                            changeUrl:'/guestAuth/app/rest/changes/id:',
-                            reload: 1000 * 1 * 60, maxCount: 10}); */
-         .constant('config',{ baseUrl: '',
-                              pageUrl:'/guestAuth/app/rest/changes?locator=count:30,start:0',
-                              sinceUrl:'/guestAuth/app/rest/changes?sinceChange=id:',
-                              changeUrl:'/guestAuth/app/rest/changes/id:',
-                              funPatternsUrl:'patterns.json',
-                              reload: 1000 * 1 * 60, maxCount: 10, funPatternsReload: 1000*30});
-        //.constant('config',{url:'/changes.json', reload: 1000 * 1 * 30});
+        .constant('config', { baseUrl: 'звфеу',
+          pageUrl: '/guestAuth/app/rest/changes?locator=count:30,start:0',
+          sinceUrl: '/guestAuth/app/rest/changes?sinceChange=id:',
+          changeUrl: '/guestAuth/app/rest/changes/id:',
+          funPatternsUrl: 'patterns.json',
+          reload: 1000 * 1 * 60, maxCount: 15, funPatternsReload: 1000 * 30});
+
       
 
