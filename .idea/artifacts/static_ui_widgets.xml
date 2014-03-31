@@ -20,6 +20,7 @@
             <element id="dir-copy" path="$PROJECT_DIR$/server/resources/lastChanges/public" />
           </element>
           <element id="file-copy" path="$PROJECT_DIR$/server/resources/lastChanges/last_fullScreen.html" />
+          <element id="file-copy" path="$PROJECT_DIR$/server/resources/lastChanges/patterns.json" />
         </element>
       </element>
     </root>
