@@ -63,6 +63,10 @@ angular.module('changesApp.services', ['changesApp.config'])
               $log.debug("loadSingleChange.changeId:" + changeId);
               return this.load(config.baseUrl + config.changeUrl + changeId);
             },
+            loadPatterns: function () {
+              $log.debug("load fun patterns");
+              return this.load(config.funPatternsUrl);
+            },
             load: function (url) {
               $log.debug('start loading from ' + url);
               var deferred = $q.defer();

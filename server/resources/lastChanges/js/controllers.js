@@ -34,6 +34,13 @@ angular.module('changesApp.controllers', ['changesApp.services'])
               } else {
                 pagePromise = ChangesLoader.loadSincePage(sinceId);
               }
+              $scope.funReplacer = function(name) {
+                $log.log("funReplacer" + name);
+                return function(input) {
+                  $log.log("funReplacer.input" + input);
+                  return name;
+                }
+              };
               pagePromise.then(
                       function (data) {
                         if ($scope.data === undefined) {
@@ -44,6 +51,12 @@ angular.module('changesApp.controllers', ['changesApp.services'])
                           return;
                         }
                         var changes = data.change.reverse();
+                        $scope.patterns = [
+                          {from: /merged/gi, to: "split"},
+                          {from: /merge/gi, to: "split"},
+                          {from: /fixed/gi, to: "broken"},
+                          {from: /fix/gi, to: "break"}
+                        ];
                         changes.forEach(function (change) {
                           var changePromise = ChangesLoader.loadSingleChange(change.id);
                           changePromise.then(

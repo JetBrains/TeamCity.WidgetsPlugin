@@ -1,0 +1,6 @@
+[
+  {"from": "merged", "to": "split"},
+  {"from": "merge", "to": "split"},
+  {"from": "fixed", "to": "broken"},
+  {"from": "fix", "to": "break"}
+]

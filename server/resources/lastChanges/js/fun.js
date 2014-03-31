@@ -14,24 +14,31 @@
  * limitations under the License.
  */
 
-'use strict';
+var patterns = [];
 
-var main = angular.module('changesApp', [
-  'changesApp.services',
-  'changesApp.controllers',
-  'changesApp.directives',
-  'changesApp.config',
-  'changesApp.changesView',
-  'angularMoment',
-  'ngStorage',
-  'ngAnimate',
-  'replacerFilters'
-]);
+angular.module('replacerFilters', []).filter('replacer', function (ChangesLoader) {
+  var patternsReload = function () {
+    var load = ChangesLoader.loadPatterns();
+    load.then(
+            function (loadedPatterns) {
+              patterns = loadedPatterns;
+            }
+    )
+  };
 
+  if (patterns.length == 0) {
+    patternsReload();
+  }
 
-main.config(function ($logProvider) {
-  $logProvider.debugEnabled(true);
+  return function (input) {
+    var result = input;
+    patterns.forEach(function (r) {
+      result = result.replace(r.from, r.to);
+    });
+    return result;
+  };
 });
+
 
 
 
