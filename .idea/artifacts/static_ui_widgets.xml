@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact name="static_ui_widgets">
+    <output-path>$PROJECT_DIR$/out/artifacts/static_ui_widgets</output-path>
+    <root id="root">
+      <element id="directory" name="investigations">
+        <element id="directory" name="js">
+          <element id="dir-copy" path="$PROJECT_DIR$/server/resources/investigations/js" />
+        </element>
+        <element id="directory" name="public">
+          <element id="dir-copy" path="$PROJECT_DIR$/server/resources/investigations/public" />
+        </element>
+        <element id="file-copy" path="$PROJECT_DIR$/server/resources/investigations/top_fullScreen.html" />
+      </element>
+      <element id="directory" name="lastChanges">
+        <element id="directory" name="js">
+          <element id="dir-copy" path="$PROJECT_DIR$/server/resources/lastChanges/js" />
+        </element>
+        <element id="directory" name="public">
+          <element id="dir-copy" path="$PROJECT_DIR$/server/resources/lastChanges/public" />
+        </element>
+        <element id="file-copy" path="$PROJECT_DIR$/server/resources/lastChanges/last_fullScreen.html" />
+      </element>
+    </root>
+  </artifact>
+</component>

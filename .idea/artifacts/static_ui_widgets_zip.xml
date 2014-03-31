@@ -1,6 +1,0 @@
-<component name="ArtifactManager">
-  <artifact name="static_ui_widgets.zip">
-    <output-path>$PROJECT_DIR$/out/artifacts/static_ui_widgets_zip</output-path>
-    <root id="root" />
-  </artifact>
-</component>
