@@ -2,7 +2,7 @@
   <artifact name="static_ui_widgets">
     <output-path>$PROJECT_DIR$/out/artifacts/static_ui_widgets</output-path>
     <root id="root">
-      <element id="archive" name="static_ui_widgtes.zip">
+      <element id="archive" name="static_ui_widgets.zip">
         <element id="directory" name="investigations">
           <element id="directory" name="js">
             <element id="dir-copy" path="$PROJECT_DIR$/server/resources/investigations/js" />
