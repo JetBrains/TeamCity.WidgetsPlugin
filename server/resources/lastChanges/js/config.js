@@ -27,7 +27,7 @@ angular.module('changesApp.config', [])
                             pageUrl:'/guestAuth/app/rest/changes?locator=count:12,start:0',
                             sinceUrl:'/guestAuth/app/rest/changes?sinceChange=id:',
                             changeUrl:'/guestAuth/app/rest/changes/id:',
-                            reload: 1000 * 1 * 60, maxCount: 12});
+                            reload: 1000 * 1 * 60, maxCount: 10});
         //.constant('config',{url:'/changes.json', reload: 1000 * 1 * 30});
       
 

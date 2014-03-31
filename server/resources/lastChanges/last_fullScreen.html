@@ -94,22 +94,27 @@
             margin-bottom: 15px;
         }
 
+        #title {
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+            color: #fff;
+            font-size: 36px;
+        }
+
     </style>
 
 
 </head>
 <body ng-controller="ChangesLoaderCtrl">
+<div id="title">
+    10 Latest Commits
+</div>
 <div ng-last-changes id="changesList">
     <dl>
         <dt ng-repeat-start="commit in data">{{commit.fullName}}</dt>
         <dd ng-repeat-end>{{commit.comment | replacer}}</dd>
     </dl>
-    <!--  <ul>
-          <li class="animate-repeat" ng-repeat="commit in data">
-              {{commit.fullName}} - {{commit.comment}}
-          </li>
-      </ul>-->
-
 </div>
 </body>
 </html>
