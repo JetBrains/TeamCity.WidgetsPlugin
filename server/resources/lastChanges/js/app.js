@@ -19,7 +19,9 @@
 
 angular.module('replacerFilters', []).filter('replacer', function () {
   return function (input) {
-    return input;
+    var result = input.replace(/fixed/gi, "broken");
+    result = result.replace(/fix/gi, "break");
+    return result;
   };
 });
 
