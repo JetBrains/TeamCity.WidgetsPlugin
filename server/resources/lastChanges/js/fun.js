@@ -34,7 +34,7 @@ angular.module('replacerFilters', []).filter('replacer', function (ChangesLoader
     var result = input;
     patterns.forEach(function (r) {
       if (r.regexp !== undefined) {
-        result = result.replace(new RegExp("(" + r.from + ")", r.regexp), r.to);
+        result = result.replace(new RegExp(r.from, r.regexp), r.to);
       } else {
         result = result.replace(r.from, r.to);
       }
