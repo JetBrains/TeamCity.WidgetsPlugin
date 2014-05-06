@@ -15,6 +15,7 @@
         <element id="archive" name="widgets-resources.jar">
           <element id="directory" name="buildServerResources">
             <element id="dir-copy" path="$PROJECT_DIR$/server/resources" />
+            <element id="dir-copy" path="$PROJECT_DIR$/../TeamCity.Widgets" />
           </element>
         </element>
       </element>

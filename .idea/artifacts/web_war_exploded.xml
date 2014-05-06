@@ -12,6 +12,7 @@
         </element>
       </element>
       <element id="dir-copy" path="$PROJECT_DIR$/server/resources" />
+      <element id="dir-copy" path="$PROJECT_DIR$/../TeamCity.Widgets" />
     </root>
   </artifact>
 </component>
