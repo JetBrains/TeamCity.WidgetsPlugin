@@ -1,7 +1,0 @@
-[
-  {"from": "merged ", "to": "split ", "regexp":"gi"},
-  {"from": "merge ", "to": "split ", "regexp":"gi"},
-  {"from": "fixed bug in", "to": "broke ", "regexp":"gi"},
-  {"from": "fix ", "to": "break " , "regexp":"gi"},
-  {"from": "fixed ", "to": "broke ", "regexp":"gi"}
-]
