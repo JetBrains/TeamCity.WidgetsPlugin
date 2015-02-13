@@ -5,7 +5,12 @@ TeamCity html widgets framework.
 Widgets
 =======
 1. TeamCity investigations - shows 'TAKEN' TeamCity investigations grouped by assignee and ages.
-Widget is available under <TeamCity context path>/app/widgets/investigation/tv.html
+Widget is available under <TeamCity context path>/app/widgets/investigation/top_fullScreen.html
+If used with StaticUIExtension widget is available under <TeamCity context path>/app/static_content/widgets/investigations/top_fullScreen.html
+
+2. TeamCity latest commits - shows latest VCS commits
+Widget is available under <TeamCity context path>/app/widgets/lastChanges/last_fullScreen.html
+If used with StaticUIExtension widget is available under <TeamCity context path>/app/static_content/widgets/lastChanges/last_fullScreen.html
 
 Implementation details:
 - current implementation is based on angular js and d3js
