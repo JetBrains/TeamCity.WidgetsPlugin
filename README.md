@@ -1,13 +1,14 @@
-TeamCity.WidgetsPlugin
+TeamCity.WidgetsPlugin 
 =============================
+
+[Build status: ](https://teamcity.jetbrains.com/viewType.html?buildTypeId=TeamCityPluginsByJetBrains_Widgets_TeamCityWidgetsPlugin)![](http://teamcity.jetbrains.com/app/rest/builds/buildType:TeamCityPluginsByJetBrains_Widgets_TeamCityWidgetsPlugin/statusIcon)
 
 The project is a basic TeamCity plugin wrapper that allows to install [TeamCity widgets](https://github.com/JetBrains/TeamCity.Widgets) to the server.
 
-Read to install **widgets.zip** can be downloaded here: https://teamcity.jetbrains.com/viewLog.html?buildId=415322&buildTypeId=TeamCityPluginsByJetBrains_Widgets_TeamCityWidgetsPlugin&tab=artifacts
-
-How to install plugin to TeamCity you can read here:
-
-Please be aware that you need to restart your server in order to see the plugin in action.
+To install the plugin, upload the
+[widgets.zip](https://teamcity.jetbrains.com/viewLog.html?buildId=415322&buildTypeId=TeamCityPluginsByJetBrains_Widgets_TeamCityWidgetsPlugin&tab=artifacts)
+at 'Administration > Plugins List' or put it into &lt;TeamCity data
+dir>/plugins dir and restart the TeamCity server.
 
 Currently available widgets are:
 
