@@ -3,7 +3,7 @@ TeamCity.WidgetsPlugin
 
 The project is a basic TeamCity plugin wrapper that allows installing [TeamCity widgets](https://github.com/JetBrains/TeamCity.Widgets) to the server.
 
-Download ready to install **widgets.zip** [here](https://teamcity.jetbrains.com/viewLog.html?buildId=415322&buildTypeId=TeamCityPluginsByJetBrains_Widgets_TeamCityWidgetsPlugin&tab=artifacts).
+[Download](https://teamcity.jetbrains.com/viewLog.html?buildId=415322&buildTypeId=TeamCityPluginsByJetBrains_Widgets_TeamCityWidgetsPlugin&tab=artifacts) latest **widgets.zip** package.
 
 Install the plugin as described [in the TeamCity documentation](https://confluence.jetbrains.com/display/TCDL/Installing+Additional+Plugins)
 
