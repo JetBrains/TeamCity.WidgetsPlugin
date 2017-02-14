@@ -13,7 +13,7 @@ The currently available widgets are:
 
 * Top TeamCity investigations  
   Shows 'TAKEN' TeamCity investigations grouped by assignee and ages  
-  ``<TeamCity context path>/app/widgets/lastChanges/last_fullScreen.htm``
+  ``<TeamCity context path>/app/widgets/investigations/top_fullScreen.html``
 
 * Latest Changes   
   Shows the latest VCS commits  
